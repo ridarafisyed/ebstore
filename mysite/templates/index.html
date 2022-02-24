@@ -1,0 +1,64 @@
+<!-- @format -->
+
+{% extends "base.html" %} {% block content %}
+<style>
+  body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    background-color: #fdfdfd;
+  }
+
+  .head_text {
+    color: white;
+  }
+
+  .card {
+    box-shadow: 0 16px 48px #e3e7eb;
+  }
+</style>
+
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h3 class="site-heading my-4 mt-3 text-white">
+            Welcome to Easy Buy and Shopping Store
+          </h3>
+          <p class="text-light"> &nbsp </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+  
+    <div class="col-md-12">
+      <!--Contact form-->
+      <div style="margin: 80px">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <h3>Upload Image </h3>
+          {{imageForm.as_p}}
+          <h3>Upload Video </h3>
+          {{videoForm.as_p}}
+          <h3>Contact us </h3>
+          {{contactForm.as_p}}
+          <button
+            type="submit"
+            class="btn btn-success"
+            style="background: #8e060f; border: #8e060f"
+            >Submit</button
+          >
+        </form>
+      </div>
+    </div>
+    <hr />
+    <div class="col-md-12">
+      {}
+    </div>
+  </div>
+</div>
+{%endblock%}
